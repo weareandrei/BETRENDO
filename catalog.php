@@ -257,10 +257,10 @@
                                 <div class="custom-scrollbar">
                                     <ul class="check-list">
                                         <?php
-                                            $servername = "80.78.251.198";
-                                            $username = "u1428984_admin";
-                                            $password = "Andrews8208";
-                                            $dbname = "u1428984_betrendo";
+                                            $servername = "localhost";
+                                            $username = "root";
+                                            $password = "";
+                                            $dbname = "betrendo";
                                             
                                             $connection = mysqli_connect($servername, $username, $password, $dbname);
                                             mysqli_set_charset($connection, "utf8mb4");
@@ -312,8 +312,10 @@
                             $sql = "SELECT max(max_price) as m FROM (".$max_sub_query.") as t";
                             $max_price_slider = mysqli_fetch_assoc(mysqli_query($connection, $sql))['m'];
 
+
                             $sql = "SELECT min(max_price) as m FROM (".$min_sub_query.") as t";
                             $min_price_slider = mysqli_fetch_assoc(mysqli_query($connection, $sql))['m'];
+
                             ?>
 
                             <a class="more" href="#">Цена</a>
@@ -551,10 +553,10 @@
                     <div class="check-box">
                         <ul class="check-list">
                             <?php
-                                $servername = "80.78.251.198";
-                                $username = "u1428984_admin";
-                                $password = "Andrews8208";
-                                $dbname = "u1428984_betrendo";
+                                $servername = "localhost";
+                                $username = "root";
+                                $password = "";
+                                $dbname = "betrendo";
                                 
                                 $connection = mysqli_connect($servername, $username, $password, $dbname);
                                 mysqli_set_charset($connection, "utf8mb4");

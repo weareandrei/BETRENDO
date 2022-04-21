@@ -6,7 +6,7 @@ function load_products_from_DB(by_filter,sort) {
 
     var xhr = new XMLHttpRequest();
     xhr.onload = function() {
-        //console.log(this.responseText);
+        console.log(this.responseText);
         var json_returned_products= JSON.parse(this.responseText);
         console.log(json_returned_products);
         $('#var_currently_on_page').html(json_returned_products['currently_on_page']);
@@ -17,7 +17,7 @@ function load_products_from_DB(by_filter,sort) {
             $('#button-load-more').remove();
         }
         $('.catalog-positions').html(json_returned_products['currently_on_page'] +' из '+ json_returned_products['total_found']);
-        //console.log(json_returned_products['sql']);
+        console.log(json_returned_products['sql']);
         json_returned_products['products_json'].forEach(product_json => {
             product = JSON.parse(product_json);
 
