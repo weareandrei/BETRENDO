@@ -1,0 +1,142 @@
+
+.startup-screen .big-offer {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    height: 85vh;
+    width: 100%;
+    background-image: url("../assets/img/home-background.PNG");
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.startup-screen .big-offer .about-offer {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    margin-left: 110px;
+} 
+.startup-screen .big-offer .about-offer h1 {
+    font-size: 56px;
+    font-weight: 900;
+    text-transform: uppercase;
+    font-family: "Gotham Pro Bold";
+    color: white;
+} .startup-screen .big-offer .about-offer h3 {
+    font-size: 20px;
+    font-weight: 400;
+    text-transform: initial;
+    font-family: "Gotham Pro";
+    color: white;
+    width: 700px;
+    margin-top: 50px;
+} .startup-screen .big-offer .about-offer a button {
+    width: 100%;
+    font-size: 18px;
+    text-transform: uppercase;
+    font-family: "Gotham Pro";
+    color: white;
+    background: none;
+    border: 1px solid white;
+    padding: 25px;
+    width: 500px;
+    margin-top: 70px;
+    transition: 0.2s all ease-in-out;
+      -webkit-transition: 0.2s all ease-in-out;
+      -o-transition: 0.2s all ease-in-out;
+      -moz-transition: 0.2s all ease-in-out;
+    
+} .startup-screen .big-offer .about-offer a button:hover {
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    color: rgba(255, 255, 255, 0.9);
+    margin-left: 5px;
+}
+
+
+
+.startup-screen .relevant-categories {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+} 
+.startup-screen .relevant-categories .decoration-line {
+    height: 1px;
+    width: 200px;
+    margin: 0px 50px;
+    background-color: var(--main-dark);
+} 
+.startup-screen .relevant-categories a {
+    font-family: "Gotham Pro";
+    font-size: 16px;
+    margin: 22px;
+}
+
+
+
+
+.startup-screen .big-offer-mobile {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    padding: 0px 22px;
+    margin-top: 22px;
+    
+} .startup-screen .big-offer-mobile .offer-picture {
+    position: relative;
+    width: 100%;
+} .startup-screen .big-offer-mobile .offer-picture img {
+    width: 100%;
+} .startup-screen .big-offer-mobile .offer-picture h1 {
+    position: absolute;
+    margin-top: auto;
+    top: 34%;
+    width: 100%;
+    padding: 0px 20px;
+    font-size: 48px;
+    color: white;
+    text-align: center;
+    font-family: "Gotham Pro Bold";
+}
+
+.startup-screen .big-offer-mobile h3 {
+    font-size: 16px;
+    color: var(--main-dark);
+    line-height: 20px;
+    font-family: "Gotham Pro Bold";
+    margin: 13px 0px;
+} .startup-screen .big-offer-mobile a button {
+    width: 100%;
+    background: none;
+    letter-spacing: 3px;
+    border: 1px solid var(--main-dark);
+    font-size: 18px;
+    font-family: "Gotham Pro Bold";
+    text-transform: uppercase;
+    padding: 15px 0px;
+}
+
+@media (max-width: 1200px) {
+    .startup-screen .big-offer .about-offer h3 {
+        width: 500px;
+    }
+}
+
+@media (max-width: 550px) {
+    .startup-screen .big-offer {
+        display: none;
+    } 
+    .startup-screen .relevant-categories {
+        display: none;
+    }
+
+    .startup-screen .big-offer-mobile {
+        display: flex;
+    }
+}
+
+@media (max-width: 340px) {
+    
+}

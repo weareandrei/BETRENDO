@@ -1,0 +1,772 @@
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    position: fixed;
+    width: 100%;
+    
+    height: 90px;
+    /*
+    height: 11vh;
+    max-height: 90px;
+    */
+    background-color: white;
+    padding: 0px 40px;
+    z-index: 100;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    transition: 0.1s;
+}
+
+/* --------------------------------------------------------------- */
+/* ------------------------- TOP NAV ROW ------------------------- */
+/* --------------------------------------------------------------- */
+
+nav .brand-logo {
+    flex: 1;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+} nav .brand-logo a {
+    height: 55%;
+    width: auto;
+} nav .brand-logo a img{
+    height: 100%;
+}
+
+
+nav .gender-choice {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+} nav .gender-choice .gender {
+    position: relative;
+    display: flex;
+    flex-direction: column;  
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin: 5px 15px;
+    font-family: "Open Sans";
+    cursor: pointer;
+} nav .gender-choice .gender.active::after{
+    position: absolute;
+    bottom: -6px;
+    content: "";
+    width: 100%;
+    height: 2px;
+    background-color: var(--main-dark);
+}
+
+
+
+
+nav .menus {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+} nav .menus .offer-button{
+    padding: 10px 30px;
+    background-color: var(--main-dark);
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-family: "Open Sans";
+    font-size: 14px;
+} nav .menus .about-us {
+    white-space: nowrap;
+    text-transform: initial;
+    font-family: "Open Sans";
+    font-weight: 700;
+    margin-left: 40px;
+    font-size: 14px;
+} nav .menus .wishlist-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 40px;
+} nav .menus .wishlist-box .wishlist {
+    fill: var(--main-dark);
+    height: 22px;
+    cursor: pointer;
+} nav .menus .wishlist-box .num {
+    font-family: "Gotham Pro";
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 13px;
+    height: 13px;
+    margin-right: 10px;
+} nav .menus .search {
+    fill: var(--main-dark);
+    height: 19px;
+    margin-left: 40px;
+    cursor: pointer;
+}
+
+
+
+nav .menus .burger-wrapper, nav .menus .burger-wrapper-mobile {
+    height: 40px;
+    width: 40px;
+    margin-left: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+nav .menus .burger-wrapper .burger, nav .menus .burger-wrapper-mobile .burger {
+    position: relative;
+    content: "";
+    width: 28px;
+    height: 2px;
+    background-color: var(--main-dark);
+    opacity: 1;
+    transition: 0.3s;
+    
+} nav .menus .burger-wrapper .burger::before, nav .menus .burger-wrapper-mobile .burger::before {
+    position: absolute;
+    top: -9px;
+    content: "";
+    width: 28px;
+    height: 2px;
+    background-color: var(--main-dark);
+    transition: 0.3s;
+} nav .menus .burger-wrapper .burger::after, nav .menus .burger-wrapper-mobile .burger::after {
+    position: absolute;
+    bottom: -9px;
+    content: "";
+    width: 28px;
+    height: 2px;
+    background-color: var(--main-dark);
+    transition: 0.3s;
+} nav .menus .burger::after, nav .menus .burger::before, nav .menus .burger {
+    -o-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+    -webkit-transition: all .3s ease-in-out;
+}
+
+
+@media (max-width: 550px) {
+    nav {
+        padding: 0px 22px;
+    }
+    nav .gender-choice {
+        display: none;
+    }
+    nav .menus .offer-button {
+        display: none;
+    }
+}
+
+/* ------------------------------------------------------------------- */
+/* end ------------------------- TOP NAV ROW ------------------------- */
+/* ------------------------------------------------------------------- */
+
+
+
+nav .black-screen {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    height: 100vh;
+    width: 100vw;
+
+    transition: 0.3s all ease-in-out;
+       -webkit-transition: 0.3s all ease-in-out;
+       -o-transition: 0.3s all ease-in-out;
+       -moz-transition: 0.3s all ease-in-out;
+
+    visibility: hidden;
+    opacity: 0;
+} nav .black-screen.black-on {
+    visibility: visible;
+    opacity: 1;
+}
+@media (max-width: 550px) {
+    nav .black-screen {
+        display: none;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* ------------------------------------------------------------------- */
+/* ------------------------- SIDE-NAV GENERAL------------------------- */
+/* ------------------------------------------------------------------- */
+
+nav .side-nav {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    -webkit-transform: translate(380px, 0px);
+       -moz-transform: translate(380px, 0px);
+        -ms-transform: translate(380px, 0px);
+         -o-transform: translate(380px, 0px);
+            transform: translate(380px, 0px);
+    right: 0;
+    top: 0;
+    height: 100vh;
+    width: 380px;
+    background-color: #fff;
+    padding: 25px 30px;
+    padding-top: 10px;
+    z-index: 101;
+    overflow: auto;
+    opacity: 0;
+    transition: 0.3s all ease-in-out;
+       -webkit-transition: 0.3s all ease-in-out;
+       -o-transition: 0.3s all ease-in-out;
+       -moz-transition: 0.3s all ease-in-out;
+} nav .side-nav.open {
+    opacity: 1;
+    transform: translate(0px, 0px);
+       -webkit-transform: translate(0px, 0px);
+       -moz-transform: translate(0px, 0px);
+       -ms-transform: translate(0px, 0px);
+       -o-transform: translate(0px, 0px);
+            
+}
+
+nav .menu-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    padding-bottom: 25px;
+    padding-top: 25px;
+    cursor: pointer;
+    border-bottom: 1px solid #C5C5C5;
+} nav #side-nav-brands .menu-button h3 {
+    text-transform: capitalize;
+} nav .menu-button h3 {
+    font-size: 15px;
+    font-weight: 600;
+    font-family: "Open Sans";
+    color: var(--main-dark);
+} nav .menu-button svg{
+    height: 12px;
+    fill: var(--main-dark);;
+}
+
+nav .first-letter {
+    font-size: 15px;
+    font-weight: 900;
+    text-transform: capitalize;
+    font-family: "Open Sans";
+    margin-top: 35px;
+    margin-bottom: 25px;
+} 
+
+
+
+/* -------------------- SIDE-NAV HEADER --------------------*/
+nav .side-nav .header-nav {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+       -moz-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+       -moz-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    border-bottom: 1px solid #eeeeee;
+    padding: 0 0 19px;
+    margin: 25px 0px 65px 0px;
+} nav .side-nav .header-nav .title {
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+       -moz-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+       -moz-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    position: relative;    
+    margin: 0;
+} nav .side-nav .header-nav .title h3 {
+    font-family: "Gotham Pro Bold";
+    font-size: 16px;
+    
+    text-transform: initial;
+    padding: 0 5px;
+} nav .side-nav .header-nav .title img {
+    margin: 0 17px 0 0px ;
+} nav .side-nav .header-nav .title::after {
+    content: "";
+    position: absolute;
+    bottom: -24px;
+    left: 0px;
+    width: 100%;
+    height: 3px;
+    background-color: var(--main-dark);
+} nav .side-nav .header-nav .close {
+    display: block;
+    position: relative;
+    width: 21.21px;
+    height: 21.21px;
+    -webkit-transform: translate(-2px, 0px);
+       -moz-transform: translate(-2px, 0px);
+        -ms-transform: translate(-2px, 0px);
+         -o-transform: translate(-2px, 0px);
+            transform: translate(-2px, 0px);
+    cursor: pointer;
+} nav .side-nav .header-nav .close::after {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: 13px;
+    width: 2px;
+    height: 28px;
+    -webkit-transform: rotate(45deg);
+       -moz-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+         -o-transform: rotate(45deg);
+            transform: rotate(45deg);
+    background-color: #000;
+} nav .side-nav .header-nav .close::before {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: 13px;
+    width: 2px;
+    height: 28px;
+    -webkit-transform: rotate(-45deg);
+       -moz-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+         -o-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+    background-color: #000;
+} 
+nav .side-nav .header-nav .num {
+    font-size: 16px;
+    font-family: "Gotham Pro Bold";
+} 
+
+
+nav #side-nav-wishlist .num {
+    display: block;
+} nav #side-nav-wishlist .title .num-mob {
+    display: none;
+    font-size: 13px;
+    font-family: "Gotham Pro Bold";
+}
+
+/* end -------------------- SIDE-NAV HEADER --------------------*/
+
+
+
+
+
+
+
+
+
+/* -------------------- GENDER-BOX MOBILE --------------------*/
+nav .side-nav .gender-box {
+    display: none;
+    
+    justify-content: space-between;
+       -webkit-box-pack: justify;
+       -webkit-justify-content: space-between;
+       -moz-box-pack: justify;
+       -ms-flex-pack: justify;
+
+    align-items: center;    
+       -webkit-box-align: center;
+       -webkit-align-items: center;
+       -moz-box-align: center;
+       -ms-flex-align: center;
+            
+    position: relative;
+    margin: 25px 0px 47px 0px;
+} nav .side-nav .gender-box::after {
+    content: '';
+    position: absolute;
+    bottom: -14px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #EEEEEE;
+} nav .side-nav .gender-box .gender {
+    padding: 0 11px;
+    font-size: 14px;
+    text-transform: uppercase;
+} nav .side-nav .gender-box .gender.active {
+    font-family: 'Gotham Pro Bold';
+    position: relative;
+} nav .side-nav .gender-box .gender.active::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: -2px;
+    width: -webkit-calc(100% + 8px);
+    width: -moz-calc(100% + 8px);
+    width: calc(100% + 8px);
+    height: 3px;
+    z-index: 1;
+    background-color: #000;
+}
+
+/* end -------------------- GENDER-BOX MOBILE --------------------*/
+
+
+
+
+@media (max-width: 550px) {
+    nav .side-nav {
+        transform: translate(0px, 100vh);
+           -webkit-transform: translate(0px, 100vh);
+           -moz-transform: translate(0px, 100vh);
+           -ms-transform: translate(0px, 100vh);
+           -o-transform: translate(0px, 100vh);     
+        padding: 0 22px;
+        width: 100%;
+        margin: 10.8vh 0 0;
+        padding: 15px 22px;
+        padding-bottom: 200px;
+        overflow: auto;
+    }
+    nav .side-hav .header-nav {
+        margin: 0 0 30px 0px;
+    }
+
+    nav .menus .burger-wrapper.menu-on .burger::after {
+        -moz-transform: rotate(45deg);
+         -ms-transform: rotate(45deg);
+          -o-transform: rotate(45deg);
+             transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+        bottom: 0px;
+    }
+    nav .menus .burger-wrapper.menu-on .burger::before {
+        
+        -moz-transform: rotate(-45deg);
+         -ms-transform: rotate(-45deg);
+          -o-transform: rotate(-45deg);
+             transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
+        top: 0px;
+    }
+    nav .menus .burger-wrapper.menu-on .burger {
+        background: rgba(0, 0, 0, 0);
+    }
+
+    nav .side-nav .gender-box {
+        display: flex;
+           display: -webkit-box;
+           display: -webkit-flex;
+           display: -moz-box;
+           display: -ms-flexbox;
+    }
+}
+
+/* ------------------------------------------------------------------------ */
+/* end ------------------------- SIDE-NAV GENERAL ------------------------- */
+/* ------------------------------------------------------------------------ */
+
+
+
+
+
+/* ------------------------------------------------------------ */
+/* ------------------------- WISHLIST ------------------------- */
+/* ------------------------------------------------------------ */
+#side-nav-wishlist .header-nav .close {
+    display: none;
+}
+.items-append .item {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+       -moz-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-transition: 0.3s all ease-in-out;
+    -o-transition: 0.3s all ease-in-out;
+    -moz-transition: 0.3s all ease-in-out;
+    transition: 0.3s all ease-in-out;
+    cursor: pointer;
+    padding: 7.5px 20px 7.5px 12px;
+    margin: 0 0 10px;
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+       -moz-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    position: relative; 
+} .items-append .item a .name-box {
+    margin: 0px 32px 0px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+} .items-append .item a .name-box .title {
+    font-family: "Gotham Pro Bold";
+    font-size: 13px;
+    margin: 0px 0px 7px;
+
+} .items-append .item a .name-box .title::after {
+    content: none;    
+} .items-append .item a .name-box .subtitle {
+    font-family: "Gotham Pro";
+    font-size: 13px;
+    width: 100%;
+    text-align: left;
+} .items-append .item .close {
+    -webkit-transition: 0.3s all ease-in-out;
+    -o-transition: 0.3s all ease-in-out;
+    -moz-transition: 0.3s all ease-in-out;
+    transition: 0.3s all ease-in-out;
+    /*opacity: 0;
+    visibility: hidden;*/
+    
+    position: absolute;
+    right: 22px; 
+}
+.items-append .item:hover {
+    background: #FAFAFA;
+}
+.items-append .item:hover .close {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+@media (max-width: 550px) {
+    nav #side-nav-wishlist .num {
+        display: none;
+    } nav #side-nav-wishlist .title h3 {
+        font-size: 13px;
+    } nav #side-nav-wishlist .title .num-mob {
+        display: block;
+        font-size: 13px;
+    } 
+    #side-nav-wishlist .header-nav .close {
+        display: block;
+    }
+}
+
+/* ---------------------------------------------------------------- */
+/* end ------------------------- WISHLIST ------------------------- */
+/* ---------------------------------------------------------------- */
+
+
+
+
+
+/* ------------------------------------------------------------ */
+/* -------------------------- SEARCH -------------------------- */
+/* ------------------------------------------------------------ */
+
+/* -------------------- search-box --------------------*/
+nav .side-nav .search-box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 50px;
+    width: 100%;
+    margin-top: 8px;
+} nav .side-nav .search-box svg {
+    height: 25px;
+    fill: #9B9B9B;
+} nav .side-nav .search-box input {
+    height: 50px;
+    width: 100%;
+    margin-left: 35px;
+
+    font-size: 20px;
+    width: 100%;
+    border: none;
+    background: none;
+    text-transform: uppercase;
+} nav .side-nav .search-box input::placeholder {
+    text-transform: uppercase;
+    color: #BFBFBF
+}
+nav .side-nav .search-box .search {
+    height: 22px;
+    width: 22px;
+}
+/* end ------------------ search-box ------------------*/
+
+
+/* -------------------- gender-choice --------------------*/
+#side-nav-search .gender-box {
+    display: flex;
+    
+    justify-content: space-between;
+       -webkit-box-pack: justify;
+       -webkit-justify-content: space-between;
+       -moz-box-pack: justify;
+       -ms-flex-pack: justify;
+
+    align-items: center;    
+       -webkit-box-align: center;
+       -webkit-align-items: center;
+       -moz-box-align: center;
+       -ms-flex-align: center;
+            
+    position: relative;
+    margin: 25px 0px 0px 0px;
+} #side-nav-search .gender-box::after {
+    content: '';
+    position: absolute;
+    bottom: -14px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #EEEEEE;
+} #side-nav-search .gender-box .gender {
+    padding: 0 11px;
+    font-size: 14px;
+    text-transform: uppercase;
+} #side-nav-search .gender-box .gender::selection {
+    border: none;
+    background: none;
+    outline: none;
+} #side-nav-search .gender-box .gender.active {
+    font-family: 'Gotham Pro Bold';
+    position: relative;
+} #side-nav-search .gender-box .gender.active::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: -2px;
+    width: -webkit-calc(100% + 8px);
+    width: -moz-calc(100% + 8px);
+    width: calc(100% + 8px);
+    height: 3px;
+    z-index: 1;
+    background-color: #000;
+}
+/* end ------------------ gender-choice ------------------*/
+
+
+
+/* -------------------- Search Results --------------------*/
+#side-nav-search .results-body .results-section {
+    display: block;
+} #side-nav-search .results-body .results-section {
+    margin-top: 60px;
+} #side-nav-search .results-body .results-section .search-result-header {
+    color: #949494;
+    margin-bottom: 10px;
+} #side-nav-search .results-body .results-section .results-append {
+    display: block;
+} #side-nav-search .results-body .results-section .results-append .text-result {
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    align-items: center;
+    height: 60px;
+    border-bottom: 1px solid #BFBFBF;
+    cursor: pointer;
+} #side-nav-search .results-body .results-section .results-append .text-result img {
+    width: max-content;
+    max-width: 30px;
+    max-height: 30px;
+    margin-right: 13px;
+} #side-nav-search .results-body .results-section .results-append .text-result .product-data {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin-left: 5px;
+} #side-nav-search .results-body .results-section .results-append .text-result .product-data h3 {
+    font-size: 15px;
+    font-family: "Gotham Pro";
+    margin-bottom: 10px;
+} #side-nav-search .results-body .results-section .results-append .text-result .product-data h4 {
+    font-size: 12px;
+    font-family: "Gotham Pro Light";
+} #side-nav-search .results-body .results-section .results-append .text-result h3 {
+    font-size: 15px;
+    font-family: "Gotham Pro";
+} #side-nav-search .results-body .results-section .results-append .text-result.capitalize h3 {
+    text-transform: uppercase;
+} #side-nav-search .results-body .results-section .results-append .text-result svg {
+    height: 12px;
+    position: absolute;
+    right: 0;
+}
+
+
+.results-body .check-all-results {
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    align-items: center;
+    height: 60px;
+    width: 100%;
+    padding: 12px 14px;
+    margin-top: 25px;
+    background-color: var(--main-dark);
+    border: none;
+} .results-body .check-all-results h3 {
+    font-size: 15px;
+    font-family: "Gotham Pro";
+    color: white;
+} .results-body .check-all-results h5 {
+    font-size: 12px;
+    font-family: "Gotham Pro";
+    position: absolute;
+    right: 34px;
+    color: #949494;
+} .results-body .check-all-results svg {
+    height: 12px;
+    position: absolute;
+    right: 14px;
+    fill: #949494;
+}
+
+
+
+
+
+#search-history, #search-results-male, #search-results-female {
+    display: none;
+}
+
+.search-categories-class, .search-collections-class .search-brands-class, .search-products-class {
+    display: none;
+}
+
+/* end ----------------- Search Results -------------------*/
+
+
+
+
+
+
+/* ---------------------------------------------------------------- */
+/* end -------------------------- SEARCH -------------------------- */
+/* ---------------------------------------------------------------- */

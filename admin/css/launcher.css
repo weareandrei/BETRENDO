@@ -1,0 +1,844 @@
+.launcher-controls {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    margin-top: 30px;
+} .launcher-controls>.swiper-wrapper {
+    margin: 0 !important;
+}
+
+.launcher-xml {
+    display: none;
+}
+.launcher-add {
+    display: none;
+}
+
+.path {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    width: 100%;
+    flex-wrap: wrap;
+} .path a {
+    position: relative;
+    white-space: nowrap; 
+    margin-right: 2rem;
+    margin-bottom: 5px;
+    cursor: pointer;
+}.path a h4 {
+    color: var(--main-font-color);
+    font-weight: 400;
+} .path a:first-child h4{
+    font-weight: 900;
+} .path a::after {
+    content: '';
+    position: absolute;
+    right: -20px;
+    top: 50%;
+    -webkit-transform: translate(0, -50%) rotate(-45deg);
+       -moz-transform: translate(0, -50%) rotate(-45deg);
+        -ms-transform: translate(0, -50%) rotate(-45deg);
+         -o-transform: translate(0, -50%) rotate(-45deg);
+            transform: translate(0, -50%) rotate(-45deg);
+    width: 6px;
+    height: 6px;
+    border-right: 1px solid var(--main-font-color);
+    border-bottom: 1px solid var(--main-font-color);
+} .path a:last-child::after {
+    display: none;
+}
+
+
+
+
+.swiper-scrollbar-drag {
+    margin-top: 10px !important;
+    z-index: 1000 !important;
+    height: 5px !important;
+    background: var(--supporting-color) !important;
+}
+
+
+
+.launcher-controls .swiper-wrapper .swiper-slide {
+    position: relative;
+    height: 38px !important;
+}
+.launcher-controls .search {
+    width: 300px;
+    height: 100%;
+    background-color: var(--main-font-color);
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    border-radius: 4px;
+    
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;
+
+    padding: 8px;
+    position: relative;
+    z-index: 3000;
+}
+.launcher-controls .search .img-box {
+    border: black solid 2px;
+    text-transform: uppercase;
+    font-size: 9px;
+    padding: 3px 5px;
+    font-weight: 900;
+}
+.launcher-controls .search input {
+    font-size: 16px;
+    border: none;
+    margin-left: 10px;
+    width: 100%;
+} .launcher-controls .search input:focus {
+    outline: none;
+}
+
+.launcher-controls .load-xml {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 200px;
+    height: 100%;
+
+    font-size: 16px;
+    border-radius: 4px;
+
+    color: var(--main-font-color);
+    background-color: var(--main);
+
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;
+
+    padding: 8px;
+}
+
+.launcher-controls .swiper-wrapper {
+    width: auto !important;
+}
+
+
+/* Поиск по названию и бренду */
+.launcher-controls .search-results {
+    position: absolute;
+    display: none;
+    flex-direction: column;
+
+    width: 100%;
+    height: 300px;
+
+    overflow: auto;
+
+    margin-top: 5px;
+    border-radius: 4px;
+    color: black;
+    background-color: var(--main-font-color);
+
+    z-index: 2;
+
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;
+
+    padding: 10px;
+}
+.search-box-shadow {
+    box-shadow:0px 0px 10px 10px rgba(0, 0, 0, 0.25);
+}
+
+.search-results h4 {
+    margin-top: 1rem;
+    cursor: pointer;
+} .search-results h4:hover {
+    text-decoration:  underline;
+}
+
+.launcher-filters {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    margin-top: 30px;
+
+} .launcher-filters .filter {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    border: var(--supporting-color) solid 1px;
+    border-radius: 4px;
+
+    background-color: var(--main);
+    color: var(--supporting-color);
+
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;
+
+    padding: 8px 15px;
+} .launcher-filters .filter svg {
+    height: 10px;
+    width: 10px;
+    margin-left: 10px;
+    fill: var(--supporting-color);
+}
+
+
+.launcher-bottom-controls {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    z-index: 100000;
+
+    position: fixed;
+    bottom: 0;
+    height: 30px;
+    border-radius: 4px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    padding: 25px 30px;;
+    color: var(--main-font-color);
+    background-color: var(--main);
+}
+.launcher-bottom-controls h4 {
+    margin-right: 40px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+.launcher-bottom-controls .switch-button {
+    display: flex;
+
+    height: 90%;
+    width: 80px;
+
+    padding: 5px;
+
+    border: var(--main-font-color) 1px solid;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+.launcher-bottom-controls .switch-button .switch-element {
+    height: 100%;
+    width: 50%;
+    background-color: var(--main-font-color);
+    border-radius: 4px;
+    transition: 0.3s ease-in-out;
+}
+
+.launcher-bottom-controls .switch-button.switched-on .switch-element{
+    margin-left: 40px;
+    
+}
+.launcher-bottom-controls .switch-button.switched-on {
+    background-color: #438C4F;
+}
+
+
+
+
+
+
+.launcher-shops {
+    display: flex;
+    justify-content: left;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    overflow: auto;
+
+} .launcher-shops .shop {
+    position: relative;
+
+    background-color: var(--main-font-color);
+
+    height: 200px;
+    width: 200px;
+    border-radius: 4px;
+
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;
+
+    padding: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+
+} .launcher-shops .shop img {
+    width: 100%;
+    max-height: 60px;
+    max-width: 100%;
+} .launcher-shops .shop {
+    background-color: white;
+    transition: 0.2s;
+} .launcher-shops .shop .result-number {
+    position: absolute;
+    top: 0;
+    margin-top: 20px;
+    transition: 0.2s;
+} .launcher-shops .shop .result-number h4 {
+    color: black;
+    font-weight: 900;
+    transition: 0.2s;
+}
+.launcher-shops .shop.show-missed-only {
+    background-color: var(--main);
+} .img-white {
+    display: none;
+} .launcher-shops .shop.show-missed-only img {
+    display: none;
+} .launcher-shops .shop.show-missed-only .img-white {
+    display: block;
+} .launcher-shops .shop.show-missed-only h4 {
+    display: none;
+} .result-missed {
+    display: none;
+} .launcher-shops .shop.show-missed-only .result-missed  {
+    color: var(--main-font-color);
+    display: block;
+}
+
+#missed-toggle.show-missed-only h4{
+    color: var(--main-font-color);
+    display: block;
+}
+
+
+
+
+.launcher-upload-window {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 220px;
+    margin-top: 30px;
+    border-radius: 4px;
+    background-color: var(--main);
+} .launcher-upload-window svg {
+    height: 50px;
+    width: 50px;
+    fill: var(--supporting-color);
+} .launcher-upload-window h4 {
+    margin-top: 25px;
+    color: var(--supporting-color);
+}
+
+
+
+.launcher-uploaded {
+    margin-top: 40px;
+    max-height: 150px;
+    overflow-y: auto;
+}
+.launcher-uploaded .upload-file {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    margin-bottom: 15px;
+
+} .launcher-uploaded .upload-file svg {
+    height: 12px;
+    width: 12px;
+    margin-left: 50px;
+    fill: var(--main-font-color);
+    cursor: pointer;
+} .launcher-uploaded .upload-file h4 {
+    color: var(--main-font-color);
+} .launcher-uploaded .upload-file h4.error-upload {
+    margin-left: 15px;
+    color: red;
+}
+
+.active-uploader {
+    outline: red 2px solid;
+}
+
+.control-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+}
+
+#start-xml-loading-button-disabled {
+    display: block;
+    opacity: 10%;
+} #start-xml-loading-button {
+    display: none;
+} #start-xml-sql-button {
+    margin-left: 5rem;
+    background-color: #303d45
+} .loading-animation {
+    margin-left: 20px;
+    height: 50px;
+    display: none;
+    justify-content: center;
+} .loading-animation img {
+    height: 30px;
+    width: auto;
+    margin: auto;
+}
+
+
+
+.launcher-start-button {
+    position: absolute;
+    bottom: 20px;
+} .launcher-start-button .important-note {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    margin-bottom: 20px;
+}.launcher-start-button .important-note svg {
+    height: 20px;
+    width: 20px;
+    fill: var(--supporting-color);
+    margin-right: 12px;
+}.launcher-start-button .important-note h4 {
+    color: var(--supporting-color);
+}.launcher-start-button .important-note h4 span {
+    font-weight: 900;
+} .launcher-start-button button {
+    background-color: #304532;
+    height: 50px;
+    width: 250px;
+    border-radius: 4px;
+    color: var(--main-font-color);
+}
+
+
+
+
+
+
+/* ADD PRODUCTS */
+.launcher-add .top-controls {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 40px;
+    width: 73%;
+    margin-top: 40px;
+} .launcher-add .top-controls button {
+    text-transform: uppercase;
+    font-size: 9px;
+
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;    
+
+    padding: 15px 20px;
+    color: var(--main-font-color);
+
+    border: 1px solid var(--main-font-color);
+    border-radius: 4px;
+    background-color: var(--main);
+} .launcher-add .top-controls #button-miss-product {
+    border: 2px solid #3F3F66;
+} .launcher-add .top-controls .num-of-products {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} .launcher-add .top-controls .num-of-products h5 {
+    text-transform: uppercase;
+
+    color: var(--main-font-color);
+} 
+.launcher-add .add-sections {
+    width: 100%;
+    margin-top: 12px;
+} .launcher-add .add-sections .swiper-wrapper .product-info-wrapper {
+    width: 73% !important;
+} .launcher-add .add-sections .swiper-wrapper .product-pictures {
+    width: 24% !important;
+}
+
+.launcher-add .add-sections .product-info {
+    position: relative;
+    width: 100%;
+
+    background-color: var(--main);
+    border-radius: 4px;
+
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;    
+
+    padding: 25px;
+}
+
+
+.launcher-add .add-sections .product-pictures {
+    box-sizing: border-box;
+
+    display: flex;
+    justify-content: left;
+    flex-wrap: wrap;
+
+    width: 100%;
+
+    background-color: var(--main);
+    border-radius: 4px;
+
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;    
+
+    padding: 25px;
+}
+
+.flex-right {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+} .flex-right svg {
+    height: 35px;
+    width: 35px;
+    cursor: pointer;
+    fill: #33333C;
+} .flex-right svg.favourite-on {
+    fill: rgb(255, 180, 19);
+}
+.launcher-add .add-sections .product-info .top-fields {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+} .launcher-add .add-sections .product-info .field {
+    margin-bottom: 35px;
+}.launcher-add .add-sections .product-info-wrapper  h4 {
+    font-family: "Open Sans";
+    font-weight: 500;
+    text-transform: lowercase;
+    margin-bottom: 6px;
+    color: var(--main-font-color);
+} .launcher-add .add-sections .product-info .field input, .launcher-add .add-sections .product-info .field textarea {
+    font-family: "Open Sans";
+    font-weight: 500;
+    font-size: 15px;
+
+    background-color: #33333C;
+    border-radius: 4px;
+    border: none;
+
+    height: 40px;
+    color: var(--main-font-color);
+
+    width: 100%;
+    min-width: 150px;
+    max-width: 100%;
+    
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;    
+
+    padding: 10px 15px;
+} .launcher-add .add-sections .product-info .long-field {
+    flex: 2;
+    margin-right: 80px;
+} .launcher-add .add-sections .product-info .short-field {
+    flex: 1;
+} .launcher-add .add-sections .product-info .large-field textarea {
+    height: 200px;
+}
+
+
+.launcher-add .add-sections .product-info .field-choices {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+} #choices-sub-cats {
+    display: none;
+} #choices-sub-cats .field-choices .sub-cat-choice {
+    display: none;
+} .launcher-add .add-sections .product-info .field-choices button {
+    background-color: #33333C;
+
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;    
+
+    padding: 10px 25px;
+
+    border-radius: 4px;
+
+    width: fit-content;
+    margin-right: 20px;
+    margin-bottom: 20px;
+
+    color: var(--main-font-color);
+} .launcher-add .add-sections .product-info .small-buttons button {
+    padding: 10px 12px;
+} .launcher-add .add-sections .product-info .field a {
+    color: var(--main-font-color);
+    text-decoration: underline;
+    text-underline-offset: 5px;
+}
+
+.launcher-add .add-sections .product-info #choices-sub-cats button {
+     
+}
+
+/* COLORS */
+.launcher-add .add-sections .product-info .field-choices .color-choice {
+    border-radius: 100%;
+    width: 35px;
+    height: 35px;
+    margin-right: 15px;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+#color-choice-black {
+    background-color: #000000;
+}#color-choice-gray {
+    background-color: #646464;
+}#color-choice-white {
+    background-color: #ffffff;
+}#color-choice-red {
+    background-color: #FF0000;
+} #color-choice-brown {
+    background-color: #7E3F23;
+} #color-choice-orange {
+    background-color: #FF3D00;
+} #color-choice-yellow {
+    background-color: #FFB800;
+} #color-choice-green {
+    background-color: #70FF00;
+} #color-choice-aqua {
+    background-color: #00FFD1;
+} #color-choice-blue {
+    background-color: #4200FF;
+} #color-choice-indigo {
+    background-color: #BD00FF;
+} #color-choice-maroon {
+    background-color: #FF005C;
+} #color-choice-colourful {
+    background-image: url(../assets/img/colourful.PNG);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.launcher-add .add-sections .product-info-wrapper .decision-buttons {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin-top: 15px;
+} .launcher-add .add-sections .product-info-wrapper .decision-buttons .accept-reject {
+    display: flex;
+    flex-direction: row;
+} .launcher-add .add-sections .product-info-wrapper .decision-buttons .accept-reject button {
+    padding: 14px 60px;
+    border-radius: 4px;
+    margin-right: 18px;
+    font-family: "Open Sans";
+    font-weight: 500;
+    font-size: 18px;
+    color: var(--main-font-color);
+    height: fit-content;
+    text-transform: uppercase;
+} .launcher-add .add-sections .product-info-wrapper .decision-buttons .in-DB-already {
+    display: flex;
+    flex-direction: column;
+    margin-right: 0;
+    margin-left: auto;
+} .launcher-add .add-sections .product-info-wrapper .decision-buttons .in-DB-already .extra-info {
+    background-color: var(--main);border-radius: 4px;
+    padding: 18px;
+} .launcher-add .add-sections .product-info-wrapper .decision-buttons .in-DB-already .extra-info input {
+    background-color: #33333C;
+    border-radius: 4px;
+    border: none;
+
+    height: 40px;
+    color: var(--main-font-color);
+
+    width: 100%;
+    min-width: 150px;
+    max-width: 100%;
+    
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;    
+
+    padding: 5px 15px;
+} .launcher-add .add-sections .product-info-wrapper .decision-buttons .in-DB-already button {
+    padding: 14px 60px;
+    color: var(--main-font-color);
+    text-transform: uppercase;
+    font-family: "Open Sans";
+    font-weight: 500;
+    font-size: 18px;
+    margin-top: 15px;
+    border-radius: 4px;
+}
+
+#button-accept-product {
+    background-color: #304532;
+} #button-reject-product {
+    background-color: #453030;
+} #button-supplement-product {
+    background-color: #454030;
+}
+
+
+
+
+.launcher-add .add-sections .product-pictures img {
+    width: 100%;
+    height: auto;
+} .launcher-add .add-sections .product-pictures .picture {
+    position: relative;
+    margin-bottom: 40px;
+} .launcher-add .add-sections .product-pictures .picture .chosen-number {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    margin: 25% 25%;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 4px;
+} .launcher-add .add-sections .product-pictures .picture .chosen-number h1 {
+    font-size: 5rem;
+    text-align: center;
+    font-weight: 600;
+    font-family: "Open Sans";
+    color: rgba(255, 255, 255, 0.8);
+}
+ 
+
+.old-price-wrapper {
+    position: relative;
+}
+#inp-old-price {
+    position: absolute;
+    width: 100%;
+    text-align: left;
+    left: 80px;
+    top: 0;
+    color: rgba(255, 255, 255, 0.5);
+    text-decoration: line-through;
+    text-decoration-color: rgba(255, 255, 255, 0.2);
+}
+#inp-name {
+}
+
+#inp-vendor {
+}
+
+#inp-description {
+}
+
+#inp-price {
+    color: #318723;
+    font-size: 18px;
+    font-weight: 600;
+}
+#sizes-prices-list .price {
+    color: #318723;
+    margin-top: 5px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+@media (max-width: 1200px) {
+    .launcher-add .add-sections .swiper-wrapper .product-info-wrapper {
+        width: 100% !important;
+    }
+    .launcher-add .add-sections .swiper-wrapper .product-pictures {
+        width: 100% !important;
+    }
+
+    .launcher-add .top-controls {
+        width: 100%;
+    }
+}
+
+@media (max-width: 750px) {
+    .launcher-add .add-sections .product-info .long-field {
+        margin-right: 20px;
+    }
+    .launcher-add .add-sections .product-info-wrapper .decision-buttons .accept-reject button {
+        padding: 12px 40px;
+        font-size: 16px;
+    }
+    .launcher-add .add-sections .product-info-wrapper .decision-buttons .in-DB-already button {
+        padding: 12px 40px;
+        font-size: 16px;
+    }
+}
+
+
+@media (max-width: 550px) {
+    .launcher-add .add-sections .product-info .top-fields {
+        flex-direction: column-reverse;
+
+    } .launcher-add .add-sections .product-info .field {
+        margin-bottom: 25px;
+    }
+
+    .launcher-add .top-controls .num-of-products h5:last-child {
+        display: none;
+    }
+    .launcher-add .add-sections .product-info .long-field {
+        margin-right: 0px;
+    }
+
+    .launcher-add .add-sections .product-info .short-field {
+        margin-right: 50px;
+    }
+
+    #inp-price {
+        width: 100px;
+    }
+
+    .launcher-add .add-sections .product-info-wrapper .decision-buttons {
+        flex-direction: column;
+    }
+    .launcher-add .add-sections .product-info-wrapper .decision-buttons .in-DB-already {
+        margin-top: 15px;
+        width: 150px;
+    }
+    .launcher-add .add-sections .product-info-wrapper .decision-buttons .in-DB-already .extra-info input {
+        min-width: fit-content;
+    }
+}
+@media (max-width: 340px) {
+    body {
+        display: block;
+    }
+
+    .launcher-add .add-sections .product-info-wrapper .decision-buttons .accept-reject button {
+        padding: 12px 20px;
+        font-size: 15px;
+    }
+    .launcher-add .add-sections .product-info-wrapper .decision-buttons .in-DB-already button {
+        padding: 12px 20px;
+        font-size: 15px;
+    }
+}
+/* ------------ */
